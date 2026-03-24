@@ -2,3 +2,7 @@ import { WebSocketServer } from "ws";
 const wss = new WebSocketServer({
   port: 8080,
 });
+
+wss.on("Connection", (socket, request) => {
+  const ip = request.socket.remoteAddress;
+});
